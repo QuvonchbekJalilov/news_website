@@ -9,7 +9,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CategoryController implements the CRUD actions for Category model.
+ * NewsController implements the CRUD actions for Category model.
  */
 class CategoryController extends Controller
 {

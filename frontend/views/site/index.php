@@ -21,10 +21,11 @@ $this->title = 'Yangliklar sayti';
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <?php foreach ($category as $category): ?>
+                <?php foreach ($category as $categoryItem): ?>
+
                 <li class="nav-item">
                     <form method="post">
-                    <a class="nav-link" href=""><?= $category->name?></a>
+                    <a class="nav-link" href="<?=Url::to(['/news/category' , 'id' => $categoryItem->id])?>"><?= $categoryItem->name?></a>
                     </form>
                 </li>
                 <?php endforeach; ?>
