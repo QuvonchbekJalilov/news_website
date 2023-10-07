@@ -28,6 +28,9 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_DELETED = 0;
     const STATUS_INACTIVE = 10;
     const STATUS_ACTIVE = 10;
+    const ROLE_ADMIN = 'admin';
+    const ROLE_USER = 'user';
+    const ROLE_MODERATOR = 'moderator';
 
 
     /**
@@ -209,5 +212,13 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    public function isAdmin(){
+        return $this->role == self::ROLE_ADMIN? true : false;
+    }
+
+    public function isModerator(){
+        return $this->role == self::ROLE_MODERATOR? true : false;
     }
 }

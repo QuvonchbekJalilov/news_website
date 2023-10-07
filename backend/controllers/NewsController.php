@@ -6,6 +6,7 @@ use common\components\StaticFunctions;
 use common\models\News;
 use common\models\NewsImage;
 use common\models\NewsSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -30,6 +31,9 @@ class NewsController extends Controller
                         'delete' => ['POST'],
                     ],
                 ],
+
+
+
             ]
         );
     }

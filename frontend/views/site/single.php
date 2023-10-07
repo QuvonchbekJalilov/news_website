@@ -31,12 +31,13 @@
                         <?php
 
                         use common\models\News;
+                        use yii\helpers\Url;
 
                         $category = \common\models\Category::find()->all();
                         foreach ($category as $item) :
                         ?>
                             <li class="nav-item ">
-                                <a class="nav-link" href="contact"><?= $item->name ?> <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="<?=Url::to(['/news/category' , 'id' => $item->id])?>"><?= $item->name ?> <span class="sr-only">(current)</span></a>
                             </li>
                         <?php endforeach; ?>
 
